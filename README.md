@@ -68,17 +68,17 @@ npm start
 - [ ] 기업 채용 연계 시스템
 - [ ] 모바일 앱 버전 출시
 
-## 👥 기여하기
-
-프로젝트에 기여하고 싶으시다면:
-1. 이 저장소를 Fork 하세요
-2. 새로운 Branch를 생성하세요 (\`git checkout -b feature/amazing\`)
-3. 변경사항을 Commit 하세요 (\`git commit -m 'Add amazing feature'\`)
-4. Branch에 Push 하세요 (\`git push origin feature/amazing\`)
-5. Pull Request를 생성하세요
-
 ## 📝 라이선스
 
 이 프로젝트는 [MIT 라이선스](LICENSE)를 따릅니다.
 
+## 👥 팀원
+- 신동우 (팀장)
+- 김현규
+- 양해솔
+- 홍성인
+
 ## 📞 연락
+- 이메일 : na5328@naver.com
+- 전화번호 : 010-6522-5079
+
