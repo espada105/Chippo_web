@@ -1,70 +1,84 @@
-# Getting Started with Create React App
+cat > README.md << 'EOL'
+# 취뽀의정석 (Portfolio Hub for Students)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+  <img src="path_to_logo.png" alt="취뽀의정석 로고" width="200"/>
+</p>
 
-## Available Scripts
+## 📚 프로젝트 소개
 
-In the project directory, you can run:
+취뽀의정석은 대학생들이 자신의 포트폴리오를 공유하고, 다른 학생들의 작품을 발견할 수 있는 플랫폼입니다. 취업을 준비하는 학생들에게 영감을 주고, 서로의 성장을 돕는 커뮤니티를 만들어갑니다.
 
-### `npm start`
+### 🎯 주요 기능
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **포트폴리오 공유**: 자신의 프로젝트와 작품을 쉽게 업로드하고 공유
+- **카테고리별 탐색**: 디자인, 개발, 마케팅 등 다양한 분야별 포트폴리오 탐색
+- **인터랙티브 피드백**: 댓글과 좋아요를 통한 커뮤니티 피드백
+- **프로필 관리**: 개인 프로필을 통한 작품 모음 관리
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🛠 기술 스택
 
-### `npm test`
+### Frontend
+- React.js
+- Tailwind CSS
+- React Router
+- Lucide Icons
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Backend (예정)
+- Node.js
+- Express
+- MongoDB
+- AWS S3 (파일 저장소)
 
-### `npm run build`
+## 🚀 시작하기
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+\`\`\`bash
+# 저장소 클론
+git clone https://github.com/yourusername/portfolio-hub.git
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# 디렉토리 이동
+cd portfolio-hub
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# 의존성 설치
+npm install
 
-### `npm run eject`
+# 개발 서버 실행
+npm start
+\`\`\`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 📱 스크린샷
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<p align="center">
+  <img src="path_to_screenshot1.png" alt="메인 페이지" width="400"/>
+  <img src="path_to_screenshot2.png" alt="포트폴리오 상세" width="400"/>
+</p>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 🎨 주요 특징
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- **직관적인 UI/UX**: 사용자 친화적인 인터페이스로 쉽게 포트폴리오 관리
+- **반응형 디자인**: 모든 디바이스에서 최적화된 경험 제공
+- **실시간 업데이트**: 최신 포트폴리오와 피드백 실시간 반영
+- **검색 최적화**: 태그와 카테고리를 통한 효율적인 포트폴리오 검색
 
-## Learn More
+## 🌟 로드맵
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- [ ] 사용자 인증 시스템 구현
+- [ ] 실시간 알림 기능
+- [ ] 포트폴리오 템플릿 제공
+- [ ] 기업 채용 연계 시스템
+- [ ] 모바일 앱 버전 출시
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 👥 기여하기
 
-### Code Splitting
+프로젝트에 기여하고 싶으시다면:
+1. 이 저장소를 Fork 하세요
+2. 새로운 Branch를 생성하세요 (\`git checkout -b feature/amazing\`)
+3. 변경사항을 Commit 하세요 (\`git commit -m 'Add amazing feature'\`)
+4. Branch에 Push 하세요 (\`git push origin feature/amazing\`)
+5. Pull Request를 생성하세요
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 📝 라이선스
 
-### Analyzing the Bundle Size
+이 프로젝트는 [MIT 라이선스](LICENSE)를 따릅니다.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 📞 연락
