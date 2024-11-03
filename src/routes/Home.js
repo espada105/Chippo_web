@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Search, BookOpen, Users, Briefcase, Eye, ChevronRight, ArrowRight, Lightbulb, Globe, Award } from "lucide-react";
+import { Search, BookOpen, Users, Briefcase, Eye, ChevronRight, ArrowRight, Lightbulb, Globe, Award,ThumbsUp, MessageCircle,} from "lucide-react";
 import chippoLogo from '../assets/chippo_logo.png';  //
 
 function Home() {
@@ -29,7 +29,7 @@ function Home() {
       </header>
 
       <main className="flex-1">
-        <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-gradient-to-r from-purple-50 via-white to-blue-50">
+        <section className="w-full py-12 md:py-24 lg:py-32 xl:py-64 bg-gradient-to-r from-purple-50 via-white to-blue-50">
           <div className="container px-4 md:px-6 mx-auto">
             <div className="flex flex-col items-center space-y-4 text-center">
               <div className="space-y-2">
@@ -101,8 +101,25 @@ function Home() {
                     <div className="flex justify-between items-center">
                       <span className="px-2 py-1 bg-purple-100 text-purple-800 text-xs font-semibold rounded-full hover:bg-purple-200 transition-colors duration-300">디자인</span>
                       <div className="flex items-center text-sm text-gray-500">
-                        <Eye className="h-4 w-4 mr-1" />
-                        {Math.floor(Math.random() * 1000) + 100}
+                      <div className="flex space-x-4">
+                        {/* 조회수 */}
+                        <div className="flex items-center space-x-1">
+                          <Eye className="h-4 w-4" />
+                          <span>{Math.floor(Math.random() * 1000) + 100}</span>
+                        </div>
+              
+                        {/* 좋아요 */}
+                        <div className="flex items-center space-x-1">
+                          <ThumbsUp className="h-4 w-4" />
+                          <span>{Math.floor(Math.random() * 100) + 10}</span>
+                        </div>
+                        
+                        {/* 댓글 */}
+                        <div className="flex items-center space-x-1">
+                          <MessageCircle className="h-4 w-4" />
+                          <span>{Math.floor(Math.random() * 50) + 5}</span>
+                        </div>
+                      </div>
                       </div>
                     </div>
                   </div>

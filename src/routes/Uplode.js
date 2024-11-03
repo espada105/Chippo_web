@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
+import { ArrowLeft } from 'lucide-react';  // lucide-react에서 아이콘 import
+import { useNavigate } from 'react-router-dom';  // react-router-dom의 네비게이션 훅
 
 function Upload() {
+  const navigate = useNavigate();
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [category, setCategory] = useState('');
@@ -155,7 +158,15 @@ function Upload() {
             </div>
           )}
 
-          <div className="flex justify-end">
+          <div className="flex justify-end space-x-6">
+            <button
+              type="button" // type을 button으로 설정
+              onClick={() => navigate(-1)}
+              className="inline-flex items-center px-4 py-2 border border-gray-300 text-base font-medium rounded-md shadow-sm text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+            >
+              <ArrowLeft className="w-5 h-5 mr-2" /> {/* 아이콘 추가 */}
+              뒤로가기
+            </button>
             <button
               type="submit"
               className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
