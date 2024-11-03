@@ -50,7 +50,7 @@ npm start
 
 <p align="center">
   <img src="./src/assets/pageScrinShot/메인페이지.jpeg" alt="메인 페이지" width="400"/>
-  <img src="./src/assets/pageScrinShot/포트폴리오상세.jpeg" alt="포트폴리오 상세" width="400"/>
+  <img src="./src/assets/pageScrinShot/포트폴리오페이지.jpeg" alt="포트폴리오 상세" width="400"/>
 </p>
 
 ## 🎨 주요 특징
