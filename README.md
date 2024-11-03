@@ -2,7 +2,7 @@ cat > README.md << 'EOL'
 # 취뽀의정석 (Portfolio Hub for Students)
 
 <p align="center">
-  <img src="path_to_logo.png" alt="취뽀의정석 로고" width="200"/>
+  <img src="./src/assets/chippo_logo.png" alt="취뽀의정석 로고" width="200"/>
 </p>
 
 ## 📚 프로젝트 소개
@@ -49,8 +49,8 @@ npm start
 ## 📱 스크린샷
 
 <p align="center">
-  <img src="path_to_screenshot1.png" alt="메인 페이지" width="400"/>
-  <img src="path_to_screenshot2.png" alt="포트폴리오 상세" width="400"/>
+  <img src="./src/assets/pageScrinShot/메인페이지.jpeg" alt="메인 페이지" width="400"/>
+  <img src="./src/assets/pageScrinShot/포트폴리오상세.jpeg" alt="포트폴리오 상세" width="400"/>
 </p>
 
 ## 🎨 주요 특징
