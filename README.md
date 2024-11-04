@@ -1,9 +1,9 @@
 cat > README.md << 'EOL'
 # 취뽀의정석 (Portfolio Hub for Students)
 
-<div align="center" style="background-color: white; padding: 20px; border-radius: 10px;">
-  <img src="./src/assets/chippo_logo.png" alt="취뽀의정석 로고" width="200"/>
-</div>
+<p align="center">
+  <img src="./src/assets/취뽀취뽀.png" alt="취뽀의정석 로고" width="200"/>
+</p>
 
 ## 📚 프로젝트 소개
 
