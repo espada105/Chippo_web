@@ -2,7 +2,7 @@ cat > README.md << 'EOL'
 # 취뽀의정석 (Portfolio Hub for Students)
 
 <p align="center">
-  <img src="./src/assets/취뽀취뽀.png" alt="취뽀의정석 로고" width="200"/>
+  <img src="./src/assets/취뽀취뽀.png" alt="취뽀의정석 로고" width="100%"/>
 </p>
 
 ## 📚 프로젝트 소개
