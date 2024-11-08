@@ -1,15 +1,44 @@
 import React, { useState } from 'react';
-
+import { useNavigate } from 'react-router-dom';
+import { auth } from '../firebase';
+import { signInWithEmailAndPassword } from 'firebase/auth';
 function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Here you would typically send the login data to your backend
-    console.log('Login attempt', { email, password });
-  };
+    
+    try {
+      const response = await fetch('http://localhost:5000/auth/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email,
+          password
+        })
+      });
 
+      const data = await response.json();
+      
+      if (!response.ok) {
+        throw new Error(data.message || '로그인에 실패했습니다.');
+      }
+
+      // 백엔드에서 받은 토큰을 저장
+      localStorage.setItem('token', data.token);
+      alert('로그인 성공!');
+      navigate('/');
+      
+    } catch (error) {
+      console.error('로그인 에러:', error);
+      alert(error.message);
+    }
+  };
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
@@ -145,15 +174,12 @@ function LoginPage() {
                 <span className="px-2 bg-white text-gray-500">아직 계정이 없으신가요?</span>
               </div>
             </div>
-
-            <div className="mt-6">
-              <a
-                href="#"
-                className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-indigo-600 bg-indigo-100 hover:bg-indigo-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-              >
-                회원가입
-              </a>
-            </div>
+            <button
+              onClick={() => navigate('/signup')}
+              className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-indigo-600 bg-indigo-100 hover:bg-indigo-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+            >
+              회원가입
+            </button>
           </div>
         </div>
       </div>

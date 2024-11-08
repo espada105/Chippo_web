@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Search, BookOpen, Users, Briefcase, Eye, ChevronRight, ArrowRight, Lightbulb, Globe, Award,ThumbsUp, MessageCircle,} from "lucide-react";
-import chippoLogo from '../assets/chippo_logo.png';  //
+import chippoLogo from '../assets/chippo_logo.png';
+import { useNavigate } from 'react-router-dom';
 
 function Home() {
+  const navigate = useNavigate();
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -24,7 +26,7 @@ function Home() {
           <a href="/portfolio" className="text-sm font-medium hover:text-primary transition-colors">포트폴리오</a>
           <a href="/upload" className="text-sm font-medium hover:text-primary transition-colors">업로드</a>
           <a href="/login" className="text-sm font-medium hover:text-primary transition-colors">로그인</a>
-          <button className="text-sm font-medium h-9 px-4 border border-gray-300 rounded-md hover:bg-gray-100 transition-colors">회원가입</button>
+          <button className="text-sm font-medium h-9 px-4 border border-gray-300 rounded-md hover:bg-gray-100 transition-colors" onClick={() => navigate('/signup')}>회원가입</button>
         </nav>
       </header>
 

@@ -4,6 +4,7 @@ import React from 'react';
 import Upload from './routes/Uplode';
 import LoginPage from './routes/LoginPage';
 import MainPortfolioPage from './routes/Portfolios';
+import SignupPage from './routes/SignupPage';
 
 
 
@@ -15,6 +16,7 @@ function App() {
         <Route path="/upload" element={<Upload />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/portfolio" element={<MainPortfolioPage />} />
+        <Route path="/signup" element={<SignupPage />} />
       </Routes>
     </Router>
   );
