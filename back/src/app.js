@@ -75,3 +75,49 @@ app.post('/auth/signup', async (req, res) => {
     });
   }
 });
+
+
+
+
+
+app.post('/auth/login', async (req, res) => {
+  const { email, password } = req.body;
+
+  try {
+    // Firebase Admin SDK로 사용자 확인
+    const userRecord = await admin.auth().getUserByEmail(email);
+    
+    // 커스텀 토큰 생성
+    const token = await admin.auth().createCustomToken(userRecord.uid);
+    
+    res.json({ 
+      success: true,
+      token,
+      message: '로그인 성공'
+    });
+
+  } catch (error) {
+    console.error('로그인 에러:', error);
+    res.status(401).json({ 
+      success: false,
+      message: '로그인에 실패했습니다. 이메일과 비밀번호를 확인해주세요.'
+    });
+  }
+});
+
+
+
+
+
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`서버가 포트 ${PORT}에서 실행중입니다.`);
+  console.log(`테스트 URL: http://localhost:${PORT}/test`);
+});
+
+// 에러 핸들링 추가
+app.use((err, req, res, next) => {
+  console.error('서버 에러:', err);
+  res.status(500).json({ error: '서버 에러 발생' });
+}); 
