@@ -29,23 +29,21 @@ router.post('/signup', async (req, res) => {
 // 로그인
 router.post('/login', async (req, res) => {
     const { email, password } = req.body;
-  
+
     try {
       // Firebase Admin SDK로 사용자 확인
-      const userRecord = await admin.auth().getUserByEmail(email);
-      
+        const userRecord = await admin.auth().getUserByEmail(email);
+
       // 커스텀 토큰 생성
-      const token = await admin.auth().createCustomToken(userRecord.uid);
-      
-      res.json({ token });
+        const token = await admin.auth().createCustomToken(userRecord.uid);
+        
+        res.json({ token });
     } catch (error) {
-      console.error('로그인 에러:', error);
-      res.status(401).json({ 
+        console.error('로그인 에러:', error);
+        res.status(401).json({ 
         message: '로그인에 실패했습니다. 이메일과 비밀번호를 확인해주세요.' 
-      });
+        });
     }
   });
   
-  module.exports = router;
-
-module.exports = router; 
+module.exports = router;
