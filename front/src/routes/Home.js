@@ -175,7 +175,7 @@ function Home() {
                 { name: "디자인", icon: "🎨" },
                 { name: "개발", icon: "💻" },
                 { name: "마케팅", icon: "📊" },
-                { name: "비즈니���", icon: "💼" },
+                { name: "비즈니스", icon: "💼" },
                 { name: "예술", icon: "🎭" },
                 { name: "공학", icon: "🔧" },
                 { name: "과학", icon: "🔬" },
