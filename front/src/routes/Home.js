@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { Search, BookOpen, Users, Briefcase, Eye, ChevronRight, ArrowRight, Lightbulb, Globe, Award,ThumbsUp, MessageCircle,} from "lucide-react";
+import { Search, BookOpen, Users, Briefcase, Eye, ChevronRight, ArrowRight, Lightbulb, Globe, Award, ThumbsUp, MessageCircle, LogOut } from "lucide-react";
 import chippoLogo from '../assets/chippo_logo.png';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
 
 function Home() {
   const navigate = useNavigate();
   const [isScrolled, setIsScrolled] = useState(false);
+  const { user, logout } = useAuth();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,6 +16,11 @@ function Home() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const handleLogout = () => {
+    logout();
+    navigate('/');
+  };
 
   return (
     <div className="flex flex-col min-h-screen bg-gradient-to-b from-gray-50 to-white text-gray-900">
@@ -25,8 +32,31 @@ function Home() {
           <a href="/" className="text-sm font-medium hover:text-primary transition-colors">홈</a>
           <a href="/portfolio" className="text-sm font-medium hover:text-primary transition-colors">포트폴리오</a>
           <a href="/upload" className="text-sm font-medium hover:text-primary transition-colors">업로드</a>
-          <a href="/login" className="text-sm font-medium hover:text-primary transition-colors">로그인</a>
-          <button className="text-sm font-medium h-9 px-4 border border-gray-300 rounded-md hover:bg-gray-100 transition-colors" onClick={() => navigate('/signup')}>회원가입</button>
+          
+          {user ? (
+            <>
+              <div className="flex items-center gap-2">
+                <span className="text-sm font-medium text-gray-700">{user.email}</span>
+                <button 
+                  onClick={handleLogout}
+                  className="flex items-center gap-1 text-sm font-medium text-red-600 hover:text-red-700"
+                >
+                  <LogOut className="h-4 w-4" />
+                  로그아웃
+                </button>
+              </div>
+            </>
+          ) : (
+            <>
+              <a href="/login" className="text-sm font-medium hover:text-primary transition-colors">로그인</a>
+              <button 
+                className="text-sm font-medium h-9 px-4 border border-gray-300 rounded-md hover:bg-gray-100 transition-colors" 
+                onClick={() => navigate('/signup')}
+              >
+                회원가입
+              </button>
+            </>
+          )}
         </nav>
       </header>
 
@@ -145,7 +175,7 @@ function Home() {
                 { name: "디자인", icon: "🎨" },
                 { name: "개발", icon: "💻" },
                 { name: "마케팅", icon: "📊" },
-                { name: "비즈니스", icon: "💼" },
+                { name: "비즈니���", icon: "💼" },
                 { name: "예술", icon: "🎭" },
                 { name: "공학", icon: "🔧" },
                 { name: "과학", icon: "🔬" },

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Eye, ThumbsUp, MessageCircle, Search, Menu } from 'lucide-react';
 import chippoLogo from '../assets/chippo_logo.png';  
+import { useAuth } from '../context/AuthContext';
+import { useNavigate } from 'react-router-dom';
 
 const categories = [
   "전체", "디자인", "개발", "마케팅", "비즈니스", "예술", "공학", "과학", "기타"
@@ -21,6 +23,14 @@ function MainPortfolioPage() {
   const [selectedCategory, setSelectedCategory] = useState("전체");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const { user, logout } = useAuth();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout();
+    navigate('/');
+  };
+
   const filteredPortfolios = selectedCategory === "전체"
     ? portfolios
     : portfolios.filter(portfolio => portfolio.category === selectedCategory);
@@ -39,10 +49,22 @@ function MainPortfolioPage() {
                 </a>
             </div>
             <div className="hidden md:flex items-center space-x-4">
-              <a href="#" className="text-gray-600 hover:text-gray-900">홈</a>
-              <a href="#" className="text-gray-600 hover:text-gray-900">포트폴리오</a>
-              <a href="#" className="text-gray-600 hover:text-gray-900">업로드</a>
-              <a href="#" className="text-gray-600 hover:text-gray-900">로그인</a>
+              <a href="/" className="text-gray-600 hover:text-gray-900">홈</a>
+              <a href="/portfolio" className="text-gray-600 hover:text-gray-900">포트폴리오</a>
+              <a href="/upload" className="text-gray-600 hover:text-gray-900">업로드</a>
+              {user ? (
+                <>
+                  <span className="text-sm font-medium text-gray-700">{user.email}</span>
+                  <button 
+                    onClick={handleLogout}
+                    className="text-sm font-medium text-red-600 hover:text-red-700"
+                  >
+                    로그아웃
+                  </button>
+                </>
+              ) : (
+                <a href="/login" className="text-gray-600 hover:text-gray-900">로그인</a>
+              )}
             </div>
             <div className="md:hidden">
               <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-gray-600 hover:text-gray-900">
