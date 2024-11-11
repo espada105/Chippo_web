@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { Eye, ThumbsUp, MessageCircle, Search, Menu } from 'lucide-react';
 import chippoLogo from '../assets/chippo_logo.png';  
-import { useAuth } from '../context/AuthContext';
-import { useNavigate } from 'react-router-dom';
+import HeadNav from '../component/HeadNav';
 
 const categories = [
   "전체", "디자인", "개발", "마케팅", "비즈니스", "예술", "공학", "과학", "기타"
@@ -23,14 +22,6 @@ function MainPortfolioPage() {
   const [selectedCategory, setSelectedCategory] = useState("전체");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const { user, logout } = useAuth();
-  const navigate = useNavigate();
-
-  const handleLogout = () => {
-    logout();
-    navigate('/');
-  };
-
   const filteredPortfolios = selectedCategory === "전체"
     ? portfolios
     : portfolios.filter(portfolio => portfolio.category === selectedCategory);
@@ -40,48 +31,7 @@ function MainPortfolioPage() {
 
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col">
-      <header className="bg-white shadow-md sticky top-0 z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-4">
-            <div className="flex items-center">
-                <a href="/">
-                    <img src={chippoLogo} alt="학생포트폴리오" className="w-[200px] h-auto object-contain" />
-                </a>
-            </div>
-            <div className="hidden md:flex items-center space-x-4">
-              <a href="/" className="text-gray-600 hover:text-gray-900">홈</a>
-              <a href="/portfolio" className="text-gray-600 hover:text-gray-900">포트폴리오</a>
-              <a href="/upload" className="text-gray-600 hover:text-gray-900">업로드</a>
-              {user ? (
-                <>
-                  <span className="text-sm font-medium text-gray-700">{user.email}</span>
-                  <button 
-                    onClick={handleLogout}
-                    className="text-sm font-medium text-red-600 hover:text-red-700"
-                  >
-                    로그아웃
-                  </button>
-                </>
-              ) : (
-                <a href="/login" className="text-gray-600 hover:text-gray-900">로그인</a>
-              )}
-            </div>
-            <div className="md:hidden">
-              <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-gray-600 hover:text-gray-900">
-                <Menu className="h-6 w-6" />
-              </button>
-            </div>
-          </div>
-          {isMenuOpen && (
-            <div className="md:hidden py-2">
-              <a href="#" className="block py-2 text-gray-600 hover:text-gray-900">홈</a>
-              <a href="#" className="block py-2 text-gray-600 hover:text-gray-900">탐색</a>
-              <a href="#" className="block py-2 text-gray-600 hover:text-gray-900">업로드</a>
-              <a href="#" className="block py-2 text-gray-600 hover:text-gray-900">로그인</a>
-            </div>
-          )}
-        </div>
-      </header>
+      <HeadNav />
 
       <main className="flex-grow">
         <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
