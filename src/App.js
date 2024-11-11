@@ -15,7 +15,7 @@ function App() {
         <Route path="/upload" element={<Upload />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/portfolio" element={<MainPortfolioPage />} />
-      </Routes>
+      </Routes> 
     </Router>
   );
 }
