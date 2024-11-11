@@ -25,6 +25,7 @@ function HeadNav() {
             </nav>
         </header>
     )
+
 }
 
 export default HeadNav;
