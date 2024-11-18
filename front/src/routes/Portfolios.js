@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Eye, ThumbsUp, MessageCircle, Search, Menu } from 'lucide-react';
 import chippoLogo from '../assets/chippo_logo.png';  
-import HeadNav from '../component/HeadNav';
+import HeadNav from '../components/HeadNav';
 
 const categories = [
   "전체", "디자인", "개발", "마케팅", "비즈니스", "예술", "공학", "과학", "기타"

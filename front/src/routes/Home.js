@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Search, BookOpen, Users, Briefcase, Eye, ChevronRight, ArrowRight, Lightbulb, Globe, Award,ThumbsUp, MessageCircle,} from "lucide-react";
 //
-import HeadNav from '../component/HeadNav';
+import HeadNav from '../components/HeadNav';
 
 function Home() {
 
